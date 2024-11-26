@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Page</title>
+    <style>
+            body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Ensures the video covers the entire background */
+            z-index: -1;
+            .container {
+                text-align: center;
+            }
+            h1,
+            h2 {
+                font-size: 2.5rem;
+                color: #333;
+            }
+            button {
+                margin-top: 20px;
+                padding: 10px 20px;
+                font-size: 1rem;
+                cursor: pointer;
+                border: none;
+                background-color: #d0e725;
+                color: white;
+                border-radius: 5px;
+            }
+            .transition {
+                margin-top: 30px;
+                font-size: 1.5rem;
+                color: #555;
+            }
+            #transitionText {
+                display: inline-block;
+                font-size: 1.5rem;
+                color: #444;
+                padding: 5px;
+                animation: fadeInOut 1s infinite;
+            }
+            @keyframes fadeInOut {
+                0% {
+                    opacity: 0;
+                }
+                50% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+    </style>
+</head>
+
+<style>
+    /* Style for full-screen video background */
+    
+    .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Ensures the video covers the entire background */
+        z-index: -1;
+        /* Keeps the video behind other content */
+    }
+    /* Content styles (optional) */
+    
+    .content {
+        position: relative;
+        color: white;
+        font-size: 30px;
+        text-align: center;
+        z-index: 1;
+        /* Make sure content is on top of the video */
+        padding: 50px;
+    }
+</style>
+</head>
+
+<body>
+
+    <!-- Video background element with autoplay, loop, and unmuted sound -->
+    <video class="video-background" autoplay muted loop>
+    <source src="vid3.mp4" type="video/mp4">
+    <source src="vid3.mp4" type="video/webm">
+    Your browser does not support the video tag.
+</video>
+    <style>
+        body {
+            color: black;
+        }
+    </style>
+
+    <body>
+
+        <div class="container">
+            <h1 id="heading">Just kidding that's not enough</h1>
+            <button id="nextButton">Next</button>
+            <h2 id="subheading" style="display:none; color: red;">I love</h2>
+            <div id="transition" class="transition" style="display:none;">
+                <div id="transitionText"></div>
+            </div>
+        </div>
+
+        <script>
+            const nextButton = document.getElementById("nextButton");
+            const heading = document.getElementById("heading");
+            const subheading = document.getElementById("subheading");
+            const transitionTextDiv = document.getElementById("transitionText");
+            const transitionDiv = document.getElementById("transition");
+
+            const phrases = [
+                'Your joy', 'Your lips', 'Your personality', 'Your laughter', 'Your voice',
+                'Your hands', 'Your embrace', 'Your joy', 'Your tears', 'Your sense of humor',
+                'Your kindness', 'Your intelligence', 'Your sense of adventure', 'Your creativity',
+                'Your compassion', 'Your loyalty', 'Your ambition', 'Your determination', 'Your gentleness',
+                'Your courage', 'Your honesty', 'Your humility', 'Your patience', 'Your resilience',
+                'Your thoughtfulness', 'Your sincerity', 'Your warmth', 'Your generosity', 'Your grace',
+                'Your wit', 'Your wisdom', 'Your curiosity', 'Your understanding', 'Your supportiveness',
+                'Your optimism', 'Your perseverance', 'Your integrity', 'Your enthusiasm', 'Your authenticity',
+                'Your affection', 'Your forgiveness', 'Your flexibility', 'Your independence', 'Your sensibility',
+                'Your adaptability', 'Your charm', 'Your elegance', 'Your resilience', 'Your spontaneity',
+                'Your selflessness', 'Your sophistication', 'Your self-awareness', 'Your tranquility', 'Your sensitivity',
+                'Your modesty', 'Your reliability', 'Your sense of responsibility', 'Your open-mindedness', 'Your optimism',
+                'Your determination', 'Your resilience', 'Your passion', 'Your empathy', 'Your adventurous spirit',
+                'Your sense of wonder', 'Your ability to listen', 'Your willingness to learn', 'Your humility', 'Your ability to forgive',
+                'Your capacity to love', 'Your sense of belonging', 'Your adaptability', 'Your self-improvement', 'Your self-confidence',
+                'Your authenticity', 'Your capacity to inspire', 'Your commitment', 'Your reliability', 'Your charisma',
+                'Your reliability', 'Your sense of style', 'Your perseverance', 'Your resilience', 'Your determination',
+                'Your wisdom', 'Your empathy', 'Your courage', 'Your creativity', 'Your optimism', 'Your kindness',
+                'Your integrity', 'Your patience', 'Your understanding', 'Your passion', 'Your generosity', 'Your love'
+            ];
+
+            let currentIndex = 0;
+
+            nextButton.addEventListener("click", () => {
+                // Hide the "Just kidding" heading and the "Next" button
+                heading.style.display = 'none';
+                nextButton.style.display = 'none';
+
+                // Show "I love" heading and transition text
+                subheading.style.display = 'block';
+                transitionDiv.style.display = 'block';
+
+                // Start the transition
+                startTransition();
+            });
+
+            function startTransition() {
+                setInterval(() => {
+                    if (currentIndex < phrases.length) {
+                        transitionTextDiv.textContent = phrases[currentIndex];
+                        currentIndex++;
+                    } else {
+                        currentIndex = 0; // Loop back to the beginning
+                    }
+                }, 1000); // Transition every 2 seconds
+            }
+        </script>
+
+    </body>
+
+</html>
