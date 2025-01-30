@@ -178,15 +178,23 @@
         </div>
     </div>
 
+    <audio id="audio">
+        <source src="song.mp3.mp3" type="audio/mp3">
+    </audio>
+
     <script>
-        // JavaScript to toggle the opening of the envelope when the heart is clicked
         const envelope = document.querySelector('.envelope-wrapper');
         const heart = document.querySelector('.heart');
+        const audio = document.getElementById('audio');
 
         heart.addEventListener('click', () => {
-            envelope.classList.toggle('flap'); // This toggles the "flap" class to open/close the envelope
+            envelope.classList.toggle('flap'); 
+            audio.play(); 
         });
     </script>
 </body>
+
+
+
 
 </html>
