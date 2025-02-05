@@ -11,7 +11,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: Arial, sans-serif;
             display: flex;
@@ -24,12 +24,12 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
-        
+
         .button-container {
             display: flex;
             gap: 20px;
         }
-        
+
         .button1 {
             padding: 15px 25px;
             background-color: #ea0a0a;
@@ -40,18 +40,18 @@
             font-size: 16px;
             text-align: center;
         }
-        
+
         .button1:hover {
             background-color: #e71a10;
         }
-        
+
         .button1 {
             position: absolute;
             left: 40%;
             bottom: 10%;
             font-size: larger;
         }
-        
+
         .button2 {
             position: absolute;
             top: 10px;
@@ -62,7 +62,7 @@
             cursor: pointer;
             z-index: 1001;
         }
-        
+
         .button3 {
             position: absolute;
             right: 6%;
@@ -73,7 +73,7 @@
             cursor: pointer;
             z-index: 1001;
         }
-        
+
         .menu {
             position: fixed;
             top: 7%;
@@ -84,18 +84,18 @@
             transition: left 0.3s ease;
             z-index: 1000;
         }
-        
+
         .menu.active {
             left: 0;
         }
-        
+
         .menu-item {
             padding: 10px;
             color: #fff;
             text-decoration: none;
             display: block;
         }
-        
+
         .countdown {
             display: flex;
             flex-direction: column;
@@ -104,11 +104,11 @@
             text-align: center;
             margin-top: 20px;
         }
-        
+
         .countdown div {
             margin: 10px;
         }
-        
+
         .countdown h3 {
             color: hsl(4, 51%, 45%);
             letter-spacing: 2px;
@@ -116,7 +116,7 @@
             text-transform: uppercase;
             margin-top: 10px;
         }
-        
+
         .countdown p {
             padding: 20px;
             background-color: hsl(7, 76%, 41%);
@@ -124,7 +124,7 @@
             color: white;
             font-size: 46px;
         }
-        
+
         .socials {
             position: absolute;
             bottom: 30px;
@@ -132,19 +132,19 @@
             left: 50%;
             transform: translate(-50%);
         }
-        
+
         .socials ul {
             display: flex;
         }
-        
+
         .socials ul li {
             margin: 0 20px;
         }
-        
+
         img {
             max-width: 100%;
         }
-        
+
         .container {
             display: flex;
             flex-direction: column;
@@ -152,7 +152,7 @@
             justify-content: center;
             min-height: 70vh;
         }
-        
+
         .container h1 {
             color: whitesmoke;
             font-size: 30px;
@@ -161,25 +161,69 @@
             margin-bottom: 50px;
             text-align: center;
         }
-        
+
         .attribution {
             font-size: 12px;
             text-align: center;
             color: whitesmoke;
         }
-        
+
         .attribution a {
             color: white;
         }
+
+        /* Default Styles (for laptops and larger screens) */
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Styles for phones in landscape mode */
+        @media only screen and (max-width: 768px) and (orientation: landscape) {
+            body {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .button1 {
+                position: absolute;
+                left: 40%;
+                bottom: 10%;
+                font-size: larger;
+            }
+
+            .container {
+                flex-direction: row;
+                justify-content: space-between;
+                max-width: 90%;
+                padding: 20px;
+            }
+        }
+
+        /* Styles for laptops in portrait mode */
+        @media only screen and (min-width: 1024px) and (orientation: portrait) {
+            body {
+                display: block;
+                padding: 20px;
+            }
+
+            .container {
+                max-width: 800px;
+                margin: auto;
+            }
+        }
+
         /* Mobile Responsive */
-        
         @media (max-width: 500px) {
             .container {
                 max-width: auto;
                 padding: 0 15px;
             }
         }
-        
+
         .menu-button {
             position: fixed;
             top: 10px;
@@ -195,8 +239,6 @@
 </head>
 
 <body>
-
-
 
     <button class="menu-button" onclick="toggleMenu()">&#x2630;</button>
     <div class="menu" id="menu">
